@@ -4,9 +4,9 @@
 export default async function TwelveDaysOfXmasSlug({
   params
 }: {
-  params: Promise<{slug: string}>
+  params: Promise<{day: string}>
 }) {
-  const slug = (await params).slug
+  const slug = (await params).day
   const data = await fetch('https://api.vercel.app/blog')
   const out = (await data.json()) as  Record<string, any>[]
 
